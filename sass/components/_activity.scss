@@ -1,0 +1,40 @@
+.activity {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.activity__title {
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-title-color);
+  margin-bottom: 50px;
+}
+
+.activity__list {
+  margin-top: 50px;
+  margin-bottom: 94px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.activity__text {
+  width: 100%;
+  min-height: 70px;
+  position: relative;
+  bottom: 70px;
+  backdrop-filter: blur(1px);
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

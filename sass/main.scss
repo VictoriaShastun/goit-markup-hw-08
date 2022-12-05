@@ -1,0 +1,17 @@
+// utils
+@import './utils/variables';
+
+// base styles
+@import './base/base';
+@import './base/reset';
+
+// components
+@import './components/header';
+@import './components/hero';
+@import './components/skills';
+@import './components/activity';
+@import './components/team';
+@import './components/client';
+@import './components/footer';
+@import './components/modal';
+@import './components/portfolio';

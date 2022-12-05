@@ -1,0 +1,10 @@
+body {
+  font-family: 'Roboto', 'Raleway';
+  color: var(--text-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
