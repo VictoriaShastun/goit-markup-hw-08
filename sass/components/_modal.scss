@@ -8,6 +8,11 @@
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(1px);
   transition: opacity 250ms linear, visibility 250ms linear;
+  overflow-y: auto;
+
+  @media screen and (max-width: 1199px) {
+    padding: 93px 15px;
+  }
 }
 
 .backdrop.is-hidden {
@@ -15,22 +20,30 @@
   visibility: hidden;
   pointer-events: none;
 }
-
 .modal {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 70%;
   left: 50%;
+  width: 100%;
+  max-width: 450px;
   padding: 40px;
+
   transform: translateX(-50%) translateY(-50%) scale(1);
-  width: 528px;
-  min-height: 581px;
+
   background-color: var(--color-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* animation: scale-up-center 1500ms cubic-bezier(0.39, 0.575, 0.565, 1); */
+
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 528px;
+  }
 }
 .modal-icon {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);

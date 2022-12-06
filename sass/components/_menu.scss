@@ -1,48 +1,95 @@
-.mobile-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-
+.menu {
   display: flex;
-  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-  min-width: 320px;
-  width: 100%;
-  height: 100%;
-  padding: 48px 40px;
-
-  background-color: #ffffff;
-  overflow-y: auto;
-
-  pointer-events: none;
-
-  transform: translateY(-100%);
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &.is-open {
-    pointer-events: initial;
-    transform: translateY(0);
-  }
-
-  @media screen and (min-width: 768px) {
+@media (max-width: 767px) {
+  .menu {
     display: none;
   }
 }
 
-.mobile-menu__nav-list {
-  margin-bottom: 64px;
+.menu .link {
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
 }
 
-.mobile-menu__nav-item {
-  &:not(:last-child) {
-    padding-bottom: 32px;
+.menu .link:hover,
+.menu .link:focus {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
   }
 }
 
-.mobile-menu__nav-link {
-  display: inline-block;
+.menu-toggle:hover,
+.menu-toggle:focus {
+  fill: #2196f3;
+  transform: transition;
+}
 
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+}
+
+.mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-grow: 1;
+}
+
+.mobile-menu__link {
+  display: block;
+  margin-bottom: 32px;
   font-weight: 500;
   font-size: 40px;
   line-height: calc(47 / 40);
@@ -54,68 +101,47 @@
 
   &:hover,
   &:focus {
-    color: #2196f3;
-  }
-
-  &--active {
-    color: #2196f3;
+    color: var(--accent-color);
+    transform: transition;
   }
 }
 
-.mobile-menu__contact-group {
-  margin-top: auto;
-  margin-bottom: 64px;
-}
-
-.mobile-menu__phone-link {
-  display: block;
+.mobile-menu__contact-item {
   margin-bottom: 32px;
 
+  &:last-child {
+    margin-bottom: 64px;
+  }
+}
+.mobile-menu__contact-tel {
   font-weight: 500;
   font-size: 34px;
   line-height: calc(40 / 34);
   letter-spacing: 0.02em;
 
   color: #2196f3;
-
-  @media screen and (max-width: 480px) {
-    font-size: 24px;
-  }
 }
-
-.mobile-menu__email-link {
-  display: block;
-
+.mobile-menu__contact-mail {
   font-weight: 500;
   font-size: 24px;
   line-height: calc(28 / 24);
   letter-spacing: 0.02em;
-}
 
-.mobile-menu__social-list {
+  color: #757575;
+}
+.mobile-menu__social {
   display: flex;
-  column-gap: 10px;
-  row-gap: 20px;
-  flex-wrap: wrap;
-
-  @media screen and (max-width: 480px) {
-    max-width: 220px;
-  }
 }
-
 .mobile-menu__social-item {
-  &:not(:last-child) {
-    padding-right: 10px;
-    border-right: 1px solid rgba(33, 33, 33, 0.2);
-  }
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid rgba(33, 33, 33, 0.2);
 
-  @media screen and (max-width: 480px) {
-    &:nth-child(2n) {
-      border: none;
-    }
+  &:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 }
-
 .mobile-menu__social-link {
   font-weight: 500;
   font-size: 18px;
@@ -123,35 +149,4 @@
   letter-spacing: 0.02em;
 
   color: #2196f3;
-}
-
-.mobile-menu-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-
-  border: none;
-  background-color: transparent;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover,
-  &:focus {
-    color: #2196f3;
-  }
-
-  &--close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-  }
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-}
-
-.mobile-menu-btn__icon {
-  fill: currentColor;
 }
