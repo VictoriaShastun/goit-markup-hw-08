@@ -908,9 +908,18 @@ img {
 }
 
 .mailings__form {
-  width: 450px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 480px) {
+  .mailings__form {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mailings__form {
+    width: 450px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .mailings__form {
