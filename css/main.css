@@ -1498,7 +1498,6 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100vh;
   padding: 48px 40px;
   background: #ffffff;
@@ -1511,6 +1510,11 @@ img {
   transition: -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+@media screen and (max-width: 480px) {
+  .menu-container {
+    max-width: 100%;
+  }
 }
 
 .menu-container.is-open {
@@ -1596,4 +1600,9 @@ img {
   line-height: 1.2222222222;
   letter-spacing: 0.02em;
   color: #2196f3;
+}
+@media screen and (max-width: 479px) {
+  .mobile-menu__social-link {
+    font-size: 15px;
+  }
 }/*# sourceMappingURL=main.css.map */
